@@ -1,0 +1,8 @@
+{
+	"use_icons": true,
+	"run_on_save": false,
+	"disable": 
+	[
+		"C0111"
+	]
+}
