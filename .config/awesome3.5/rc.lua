@@ -275,6 +275,9 @@ globalkeys = awful.util.table.join(
     awful.key({"Control"          }, "F10",   toggle_conky),
     -- Calc
     awful.key({                   }, "XF86Calculator", function() awful.util.spawn("speedcrunch") end),
+    -- swap clipboard for vbox
+    -- Primary to clip -> vbox to host
+    awful.key({modkey, "Control"  }, "c",     function() awful.util.spawn_with_shell("/home/benoit/util/clipswap") end),
 
     awful.key({ modkey }, "x",
               function ()
