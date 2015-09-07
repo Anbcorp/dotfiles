@@ -4,6 +4,7 @@ awful.autofocus = require("awful.autofocus")
 awful.rules = require("awful.rules")
 -- Theme handling library
 local beautiful = require("beautiful")
+local gears = require("gears")
 -- Notification library
 local naughty = require("naughty")
 -- Widget library
@@ -14,6 +15,11 @@ local wibox = require("wibox")
 beautiful.init("/home/benoit/.config/awesome/themes/default/theme.lua")
 
 -- Theme customization
+if beautiful.wallpaper then
+    for s = 1, screen.count() do
+        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+    end
+end
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
