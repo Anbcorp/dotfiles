@@ -96,17 +96,14 @@ mysystray = wibox.widget.systray()
 -- mystatusbar = awful.wibox({ position = "bottom", screen = 1, ontop = false, width = 1, height = 16 })
 function get_conky()
     local clients = client.get()
-    local conky = nil
-    local i = 1
-    while clients[i]
+    for k, cli in pairs(clients)
     do
-        if clients[i].class == "Conky"
+        if cli.class == "conky"
         then
-            conky = clients[i]
+            return cli
         end
-        i = i + 1
     end
-    return conky
+    return nil
 end
 function raise_conky()
     local conky = get_conky()
@@ -126,12 +123,7 @@ function toggle_conky()
     local conky = get_conky()
     if conky
     then
-        if conky.ontop
-        then
-            conky.ontop = false
-        else
-            conky.ontop = true
-        end
+        conky.ontop = not conky.ontop
     end
 end
 
