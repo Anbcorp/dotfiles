@@ -1,0 +1,8 @@
+#!/bin/bash
+#export LD_PRELOAD='/usr/$LIB/libstdc++.so.6'
+export LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'
+#kexport LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libxcb.so.1 /usr/$LIB/libasound.so.2 '
+#export LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH"
+#LIBGL_DRI3_DISABLE=1 steam
+export DISPLAY=:0
+steam
