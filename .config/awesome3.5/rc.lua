@@ -22,7 +22,7 @@ if beautiful.wallpaper then
 end
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = "/home/benoit/util/urxvtl"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -75,7 +75,17 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
+ffxmenu = {
+    { "FFX-Secondary", "firefox -P secondary --no-remote"},
+    { "FFX-Proxied", "firefox -P proxy --no-remote"},
+    { "ICW-Secondary", "iceweasel -P secondary --no-remote"},
+}
+
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "SublimeText2", "/opt/sublime/sublime_text" },
+                                    { "SublimeText3", "/opt/sublime3/current/sublime_text" },
+                                    { "PyCharm", "/opt/pycharm/current/bin/pycharm.sh" },
+                                    { "browsers", ffxmenu, beautiful.awesome_icon },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -268,14 +278,12 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
     -- LockScreen
-    awful.key({ "Mod4",           }, "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
+--    awful.key({ "Mod4",           }, "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ "Mod4",           }, "l",     function () awful.util.spawn("slock") end),
     -- Conky HUD
     awful.key({"Control"          }, "F10",   toggle_conky),
     -- Calc
     awful.key({                   }, "XF86Calculator", function() awful.util.spawn("speedcrunch") end),
-    -- swap clipboard for vbox
-    -- Primary to clip -> vbox to host
-    awful.key({modkey, "Control"  }, "c",     function() awful.util.spawn_with_shell("/home/benoit/util/clipswap") end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -369,13 +377,27 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
-    { rule = { class = "Conky" },
+    { rule = { class = "conky" },
+      properties = {
+      tag = tags[2][8],
+      floating = true,
+      sticky = true,
+      ontop = false,
+      focusable = false,
+      focus = false,
+      size_hints = {"program_position", "program_size"},
+      border_color = "#00DD00",
+        } 
+    },
+    { rule = { class = "nagstamon" },
       properties = {
       floating = true,
       sticky = true,
       ontop = false,
       focusable = false,
-      size_hints = {"program_position", "program_size"}
+      focus = false,
+      size_hints = {"program_position", "program_size"},
+      tag = tags[1][8],
         } 
     }
 }
