@@ -1,0 +1,84 @@
+! XTERM
+XTerm*locale: true
+XTerm*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-koi8-u
+
+! urxvt
+URxvt.font: xft:terminus:pixelsize=14
+URxvt.boldFont: xft:terminus:bold:pixelsize=14
+URxvt.italicFont: xft:terminus:italic:pixelsize=14
+URxvt.boldItalicFont: xft:terminus:bold:italic:pixelsize=14
+urxvt.background: black
+urxvt.foreground: white
+!##make a scrollbar thats nearly black
+urxvt*scrollBar:     false
+urxvt*scrollBar_floating:    true
+urxvt*scrollBar_right:   false
+urxvt*scrollColor: #202020
+!This shouldn't be used
+!urxvt.termName: rxvt-256color
+urxvt.urlLauncher: /opt/firefox/current/firefox
+urxvt*launcher: /opt/firefox/current/firefox
+! matcher.button # 3 is a right-click
+urxvt*saveLines:        8192
+urxvt.perl-ext-common:  default,matcher,keyboard-select,clipboard
+urxvt*matcher.button:   1
+! No bell
+urxvt*visualBell:   true
+
+!Keyboard selection
+urxvt.keysym.M-Escape: perl:keyboard-select:activate
+urxvt.copyCommand: xclip -i -selection clipboard
+urxvt.pasteCommand: xclip -o -selection clipboard
+urxvt.keysym.M-v: perl:keyboard-select:tt_write
+urxvt.keysym.M-c: perl:clipboard:paste
+
+!xterm keymap configuration
+urxvt.keysym.Control-Up:   \033[1;5A
+urxvt.keysym.Control-Down:    \033[1;5B
+urxvt.keysym.Control-Left:    \033[1;5D
+urxvt.keysym.Control-Right:    \033[1;5C
+urxvt.keysym.Home:    \033[H
+urxvt.keysym.End:    \033[F
+
+! fnu things
+urxvt.cursorBlink:  true
+urxvt.cursorUnderline: false
+
+urxvt.keysym.C-Mod1-r: command:\033[8;24;80t
+urxvt.keysym.C-Mod1-o: command:\033]701;C.UTF-8\007
+
+!terminal colors
+
+!black 30
+*color0: #000000
+*color8: #3639d0
+
+!red 31
+*color1: #d01f3c
+*color9: #de3677
+
+!green 32
+*color2: #6bba70
+*color10: #98cf9b
+
+!yellow 33
+*color3: #c79810
+*color11: #d8b758
+
+!blue 34
+*color4: #356aa0
+*color12: #7297bd
+
+!pink 35
+*color5: #d01f98
+*color13: #de63b7
+
+!cyan 36
+*color6: #4096ee
+*color14: #7ab6f3
+
+!white 37
+*color7: #eeeeee
+*color15: #ffffff
+
+
