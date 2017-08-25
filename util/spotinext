@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+import dbus
+from dbus.mainloop.glib import DBusGMainLoop
+
+loop = DBusGMainLoop(set_as_default=True)
+bus = dbus.SessionBus(mainloop=loop)
+bus.get_object("org.mpris.MediaPlayer2.spotify", '/org/mpris/MediaPlayer2')
+spotify_bus = bus.get_object("org.mpris.MediaPlayer2.spotify", '/org/mpris/MediaPlayer2')
+spotify = dbus.Interface(spotify_bus, 'org.mpris.MediaPlayer2.Player')
+
+spotify.Next()
+
