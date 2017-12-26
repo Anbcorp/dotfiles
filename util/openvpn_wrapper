@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+# Usage: ./vpn <<(pass vpn/credentials)
+#
+gets stdin username
+gets stdin password
+
+spawn sudo service openvpn start
+
+expect "Enter Auth Username:" {
+    send "$username\n"
+}
+expect "Enter Auth Password:" {
+    send "$password\n"
+}
+interact

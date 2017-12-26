@@ -1,3 +1,5 @@
 EDITOR=vim
+GPG_TTY=$(tty)
 
-export EDITOR
+export EDITOR GPG_TTY
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pgrep -fl redshift || redshift -l 48.892082:2.316668 &

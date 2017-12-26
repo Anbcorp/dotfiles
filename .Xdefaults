@@ -20,7 +20,8 @@ urxvt.urlLauncher: /opt/firefox/current/firefox
 urxvt*launcher: /opt/firefox/current/firefox
 ! matcher.button # 3 is a right-click
 urxvt*saveLines:        8192
-urxvt.perl-ext-common:  default,matcher,keyboard-select,clipboard
+!urxvt.perl-lib: /home/benoit/.urxvt/ext/
+urxvt.perl-ext-common:  default,matcher,keyboard-select,clipboard,font-size
 urxvt*matcher.button:   1
 ! No bell
 urxvt*visualBell:   true
@@ -33,10 +34,10 @@ urxvt.keysym.M-v: perl:keyboard-select:tt_write
 urxvt.keysym.M-c: perl:clipboard:paste
 
 !xterm keymap configuration
-urxvt.keysym.Control-Up:   \033[1;5A
-urxvt.keysym.Control-Down:    \033[1;5B
-urxvt.keysym.Control-Left:    \033[1;5D
-urxvt.keysym.Control-Right:    \033[1;5C
+!urxvt.keysym.Control-Up:   \033[1;5A
+!urxvt.keysym.Control-Down:    \033[1;5B
+!urxvt.keysym.Control-Left:    \033[1;5D
+!urxvt.keysym.Control-Right:    \033[1;5C
 urxvt.keysym.Home:    \033[H
 urxvt.keysym.End:    \033[F
 
@@ -45,7 +46,13 @@ urxvt.cursorBlink:  true
 urxvt.cursorUnderline: false
 
 urxvt.keysym.C-Mod1-r: command:\033[8;24;80t
-urxvt.keysym.C-Mod1-o: command:\033]701;C.UTF-8\007
+urxvt.keysym.C-Mod1-o: command:\033]701;en_US.ISO-8859-15\007
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-equal:  perl:font-size:reset
+URxvt.keysym.C-slash:  perl:font-size:show
 
 !terminal colors
 

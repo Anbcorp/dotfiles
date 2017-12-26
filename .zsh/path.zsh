@@ -1,3 +1,3 @@
-PATH=${PATH}:${HOME}/util
+PATH=${PATH}:/opt/firefox/current:/opt/sublimetext/current:${HOME}/util
 
 export PATH

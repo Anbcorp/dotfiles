@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while sleep 0.2; do
+    echo -e '\033[2J'
+    echo ${COLUMNS}x${LINES}
+done

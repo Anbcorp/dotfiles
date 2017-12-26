@@ -1,0 +1,10 @@
+SublimeLinter
+SublimeLinter-contrib-pep8
+markupsafe
+mdpopups
+packages.txt
+pygments
+pymdownx
+python-jinja2
+python-markdown
+pyyaml

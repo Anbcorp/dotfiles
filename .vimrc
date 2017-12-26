@@ -1,4 +1,5 @@
 syntax on
+set mouse=
 set nocompatible
 
 set ts=4

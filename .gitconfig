@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+    name = Benoit 'Anb' Depail
+    email = 
+[push]
+    default = simple
+[alias]
+    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ai)%Creset'
+[diff]
+    mnemonicPrefix = true

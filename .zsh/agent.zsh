@@ -44,6 +44,6 @@ gpg_agent_manage() {
 # ssh key management
 if [[ "$USER" != "root" ]]; then
         ssh_key_manage
-        gpg_agent_manage
+#        gpg_agent_manage
 fi
 
